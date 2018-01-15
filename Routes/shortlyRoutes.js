@@ -1,9 +1,10 @@
 var express = require('express');
 var path = require('path');
 
-var routes = function () {
+var routes = function (Url) {
     var shortlyRouter = express.Router();
-    var shortlyController = require('../Controllers/shortlyController')();
+    var shortlyController = require('../Controllers/shortlyController')(Url);
+
     shortlyRouter.get('/', function (req, res) {
         res.sendFile(path.join(__dirname, '../views/index.html'));
     });
@@ -12,8 +13,7 @@ var routes = function () {
 
     //to redirect the user to the real url when they hit the short url
 
-
-    shortlyRouter.route('/:encoded_url_id').get(shortlyController.getById);
+    shortlyRouter.route('/:encoded_id').get(shortlyController.getById);
 
 
     return shortlyRouter;
