@@ -1,19 +1,41 @@
 // add an event listener to the shorten button for when the user clicks it
-$('#shortly-btn').on('click', function(){
-    // AJAX call to /api/shorten with the URL that the user entered in the input box
-    $.ajax({
-      url: '/shorten',
-      type: 'POST',
-      dataType: 'JSON',
-      data: {url: $('#user-url').val()},
-      success: function(data){
-          // display the shortened URL to the user that is returned by the server
-          var resultHTML = '<a class="result" href="' + data.shortUrl + '">'
-              + data.shortUrl + '</a>';
-          $('#output-url').html(resultHTML);
-          console.log(data);
-          //$('#link').hide().fadeIn('slow');
-      }
-    });
-  
-  });
+(function () {
+    $('#shortly-btn').on('click', function () {
+        var url = $('#user-url').val();
+        if (!url) {
+            alert('Please make an entry for the url');
+            return;
+        };
+
+        var regExHttp = /^http[s]?:\/\/(\S+\.)?(\S+\.)(\S+)\S*/;
+        if (!regExHttp.test(url)) {
+            alert('Please make a valid entry for the url');
+            $('#user-url').val('');
+            return;
+        };
+        // AJAX call to /api/shorten with the URL that the user entered in the input box
+        var request = $.ajax({
+            url: '/shorten',
+            type: 'POST',
+            dataType: 'JSON',
+            data: {
+                url: $('#user-url').val()
+            }
+        });
+
+        request.done(function (data, statusText, xhr) {
+            var message = `Original long url: ${url}`;
+            var resultHTML = `<span>Shortly url: </span><a target="_blank" class="result" href='${data.shortUrl}'>
+                ${data.shortUrl}</a>`;
+            $('#output-url').html(resultHTML);
+            $('#output-message').html(message);
+            $('#user-url').val('');
+        });
+
+        request.fail(function (jqXHR, textStatus) {
+            var resultHTML = 'Server error occurred.Please try again';
+            $('#output-url').html(resultHTML);
+            $('#user-url').val('');
+        });
+    })
+})();
