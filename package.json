@@ -4,14 +4,26 @@
   "description": "Shorten the url",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-init": "./node_modules/jasmine/bin/jasmine.js init",
+    "test": "./node_modules/jasmine/bin/jasmine.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "4.10.6",
-    "gulp": "^3.9.1",
     "mongoose": "^4.13.9"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "gulp-env": "^0.4.0",
+    "gulp-mocha": "^5.0.0",
+    "mocha": "^4.1.0",
+    "mongoose": "^4.13.9",
+    "should": "^13.2.1",
+    "sinon": "^4.1.5",
+    "sinon-mongoose": "^2.0.2",
+    "supertest": "^3.0.0"
   }
 }

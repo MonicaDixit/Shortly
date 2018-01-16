@@ -9,6 +9,26 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceFolder}/index.js"
-        }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Mocha Test",
+            "port": 5858,
+            "sourceMaps": false
+        },
+        {
+    "name": "Unit tests",
+    "type": "node",
+    "request": "launch",
+    "program": "${workspaceRoot}/mocha.js",
+    "stopOnEntry": true,
+    // "args": ["${workspaceRoot}/TESTTODEBUG.js"],
+    "runtimeExecutable": null,
+    "env": {
+        "NODE_ENV": "test"
+     }
+    }
+        
     ]
 }
