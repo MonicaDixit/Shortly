@@ -9,6 +9,7 @@ To use Shortly, please do the following
 2. To install the dependencies, cd into the directory where you cloned the repo and type this : npm init
   This will result in creating a folder called node_modules in your code repo and this is where all the dependencies are included.
   
+ 3. Make ure you have a local instance of mongodb running.
  3.To run shortly, navigate to the root of the directory where you cloned the repo and type this: gulp
  4. To run tests, navigate to the root of the directory where you cloned the repo and type this: gulp test
  5. By deafult shortly will run on port 3000 on your machine.
