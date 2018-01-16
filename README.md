@@ -7,7 +7,7 @@ Shortly uses a smart encoding algorithm to make sure every long url gets a uniqu
 To use Shortly, please do the following
 1. Clone the repo on to your machine (mac preferred)
 2. To install the dependencies, cd into the directory where you cloned the repo and type this : npm init
-  This will result in creating a file called package.json in your code repo and this is where all the dependencies are included.
+  This will result in creating a folder called node_modules in your code repo and this is where all the dependencies are included.
   
  3.To run shortly, navigate to the root of the directory where you cloned the repo and type this: gulp
  4. To run tests, navigate to the root of the directory where you cloned the repo and type this: gulp test
@@ -21,5 +21,5 @@ After the app starts on your localhost, you can try out the following:
 4. Hit the link provided, you will be redirected to the actual long url
 5. Enter the same long url in the input box the second time, shortly will return the same short link as created in step 3 above
 6. If you enter a url that does not exist, you will be navigated to the home page , shortly knows you made a mistake the first time 
-  and shortly beleievs that everyone deserves a second chance :)) !
+  and shortly believes that everyone deserves a second chance :)) !
   
