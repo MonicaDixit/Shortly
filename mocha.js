@@ -5,7 +5,8 @@ var Mocha = require('mocha');
 
 // Determine which tests to run based on argument passed to runner
 //var args = process.argv.splice(2);
-var args = ["./tests/shortlyControllerTests.js", "./tests/shortlyIntegrationTests.js"];
+var args = ["./tests/eventHandlerTests.js"];
+//["./tests/shortlyControllerTests.js", "./tests/shortlyIntegrationTests.js"];
 var files;
 
 

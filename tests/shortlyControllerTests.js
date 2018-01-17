@@ -1,6 +1,6 @@
 var should = require('should'),
     sinon = require('sinon'),
-    chai = require('chai'),
+    // chai = require('chai'),
     Url = require('../models/url');
 
 var mongoose = require('mongoose');
