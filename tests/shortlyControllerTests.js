@@ -1,10 +1,8 @@
 var should = require('should'),
     sinon = require('sinon'),
-    // chai = require('chai'),
     Url = require('../models/url');
 
 var mongoose = require('mongoose');
-//require('sinon-mongoose');
 
 describe('Shortly Controller Tests:', function () {
     var req, res, expectedResult;

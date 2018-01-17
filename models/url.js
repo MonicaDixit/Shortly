@@ -21,7 +21,6 @@ var urlSchema = new Schema({
     },
     long_url: {
         type: String
-        // required: true
     }
 });
 

@@ -13,7 +13,7 @@
             $('#user-url').val('');
             return;
         };
-        // AJAX call to /api/shorten with the URL that the user entered in the input box
+        // AJAX call to /shorten with the URL that the user entered in the input box
         var request = $.ajax({
             url: '/shorten',
             type: 'POST',

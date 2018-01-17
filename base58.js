@@ -1,7 +1,7 @@
-var alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ";
-var base = alphabet.length;
 
 function encode(num) {
+  var alphabet = "0123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ";
+  var base = alphabet.length;
   var encoded = '';
   while (num) {
     var remainder = num % base;
